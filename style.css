@@ -1,0 +1,205 @@
+:root {
+  --color-primary: #0087FC;
+  --color-text: #62560E;
+  --color-yellow: #FFDD00;
+  --color-red: #D74134;
+  --color-button-red: #FF0303;
+  --font-base: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 21.6px; /* точный размер шрифта из макета */
+  line-height: 1.5;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px 5%;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+}
+
+.logo {
+  font-size: 17.28px; /* как в макете */
+  color: var(--color-text);
+  font-weight: 300;
+  margin-right: 40px;
+}
+
+.tabs {
+  display: flex;
+  list-style: none;
+  margin-right: auto;
+}
+
+.tab {
+  margin-right: 20px;
+}
+
+.tab a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 300;
+  font-size: 17.28px; /* макет */
+  transition: color 0.3s ease;
+}
+
+.tab a:hover,
+.tab.active a {
+  color: var(--color-primary);
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  border: 1px solid rgba(98, 86, 14, 0.6);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-container .search-icon,
+.search-container .clear-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 23px;
+  height: 23px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-size: cover;
+  transition: opacity 0.3s ease;
+}
+
+.search-container .search-icon {
+  background-image: url('assets/images/search-icon.png');
+  opacity: 1;
+}
+
+.search-container .clear-icon {
+  background-image: url('assets/images/cross-icon.png');
+  opacity: 0;
+}
+
+.styled-select {
+  width: 100%;
+  max-width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  margin-right: 20px;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.styled-select:hover {
+  border-color: var(--color-primary);
+}
+
+.login-button {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 17.28px;
+  font-weight: 400;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.login-button:hover {
+  color: var(--color-primary);
+}
+
+.settings-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('assets/images/settings-icon.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+main {
+  height: 600px;
+}
+
+.background-image {
+  height: 100%;
+  background-image: url('assets/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-resume-button,
+.post-ad-button {
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-resume-button {
+  color: #FF0303;
+  background-color: var(--color-yellow);
+}
+
+.add-resume-button:hover {
+  background-color: #f0c808;
+}
+
+.post-ad-button {
+  color: #FED839;
+  background-color: var(--color-red);
+}
+
+.post-ad-button:hover {
+  background-color: #c0372b;
+}
+
+@media (max-width: 768px) {
+  nav { flex-direction: column; align-items: stretch; }
+  .tabs { margin-bottom: 10px; }
+  .search-container { width: 100%; margin-bottom: 10px; }
+  .styled-select { width: 100%; margin-bottom: 10px; }
+  .login-button { margin-bottom: 10px; }
+  .buttons { flex-direction: column; }
+}
