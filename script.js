@@ -1,45 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Вкладки
-  const tabs = document.querySelectorAll('.tabs li');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', e => {
-      e.preventDefault();
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.querySelector('a').removeAttribute('aria-selected');
-      });
-      tab.classList.add('active');
-      tab.querySelector('a').setAttribute('aria-selected', 'true');
+// Вкладки
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.setAttribute('aria-selected','false'); t.classList.remove('active'); });
+        tab.setAttribute('aria-selected','true');
+        tab.classList.add('active');
     });
-  });
+});
 
-  // Поиск
-  const searchInput = document.querySelector('.search-container input');
-  const searchIcon = document.querySelector('.search-container .search-icon');
-  const clearIcon = document.querySelector('.search-container .clear-icon');
+// Поиск
+const searchInput = document.querySelector('.search-field');
+const searchIcon = document.querySelector('.search-icon');
+const clearIcon = document.querySelector('.clear-icon');
 
-  searchInput.addEventListener('input', () => {
-    if (searchInput.value) {
-      clearIcon.style.opacity = 1;
-      searchIcon.style.opacity = 0;
-      searchInput.placeholder = "Нажмите крестик, чтобы очистить";
+searchInput.addEventListener('input', () => {
+    if(searchInput.value){
+        searchIcon.style.display = 'none';
+        clearIcon.style.display = 'block';
     } else {
-      clearIcon.style.opacity = 0;
-      searchIcon.style.opacity = 1;
-      searchInput.placeholder = "Введите название вакансии";
+        searchIcon.style.display = 'block';
+        clearIcon.style.display = 'none';
     }
-  });
+});
 
-  clearIcon.addEventListener('click', () => {
+clearIcon.addEventListener('click', () => {
     searchInput.value = '';
-    clearIcon.style.opacity = 0;
-    searchIcon.style.opacity = 1;
-    searchInput.placeholder = "Введите название вакансии";
-  });
+    searchIcon.style.display = 'block';
+    clearIcon.style.display = 'none';
+});
 
-  // Фон открывает макет Figma
-  const bg = document.querySelector('.background-image');
-  bg.addEventListener('click', () => {
-    window.open('https://www.figma.com/proto/EGlzmMXltZtGNJ4xGHSJGV/Тест-vsevn.ru?page-id=0%3A1&type=design&node-id=1-2&viewport=217%2C158%2C0.12&t=DMV1i3KIW9EaX6TD-1&scaling=scale-down&starting-point-node-id=1%3A2&mode=design', '_blank');
-  });
+// Фоновая картинка
+const backgroundImage = document.querySelector('.background-image');
+backgroundImage.addEventListener('click', () => {
+    window.open('assets/images/background.jpg','_blank');
+});
+
+// Селект подсветка
+const citySelect = document.querySelector('.city-select');
+citySelect.addEventListener('change', () => {
+    citySelect.style.backgroundColor = '#0087FC';
+    citySelect.style.color = '#fff';
 });

@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — Тестовое задание</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Главная</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-  <header>
+<header>
     <nav>
-      <div class="logo">Объявления от работодателя</div>
-
-      <ul class="tabs" role="tablist">
-        <li class="tab active" role="tab" aria-selected="true"><a href="#">Я соискатель</a></li>
-        <li class="tab" role="tab"><a href="#">Я работодатель</a></li>
-      </ul>
-
-      <div class="search-container">
-        <input type="text" placeholder="Введите название вакансии" aria-label="Поиск вакансии">
-        <span class="search-icon"></span>
-        <span class="clear-icon"></span>
-      </div>
-
-      <select class="styled-select" aria-label="Выбор города">
-        <option value="all">Все города</option>
-        <option value="moscow">Москва</option>
-        <option value="spb">Санкт-Петербург</option>
-        <option value="nn">Нижний Новгород</option>
-      </select>
-
-      <a href="#" class="login-button">Войти</a>
-      <a href="#" class="settings-icon" aria-label="Настройки"></a>
+        <div class="tabs">
+            <button class="tab active" data-tab="applicant" title="Я соискатель" aria-selected="true">Я соискатель</button>
+            <button class="tab" data-tab="employer" title="Я работодатель" aria-selected="false">Я работодатель</button>
+        </div>
+        <div class="login">
+            <img src="assets/images/settings-icon.png" alt="Настройки">
+            <button class="login-button">Войти</button>
+        </div>
     </nav>
-  </header>
-
-  <main>
-    <div class="background-image">
-      <div class="buttons">
-        <a href="#" class="add-resume-button">Добавить резюме</a>
-        <a href="#" class="post-ad-button">Подать объявление</a>
-      </div>
+    <div class="search-container">
+        <div class="search-input">
+            <input type="text" class="search-field" placeholder="Введите название вакансии">
+            <img src="assets/images/search-icon.png" alt="Поиск" class="search-icon">
+            <img src="assets/images/cross-icon.png" alt="Очистить" class="clear-icon">
+        </div>
+        <select class="city-select">
+            <option value="nizhny-novgorod">Нижний Новгород</option>
+            <option value="moscow">Москва</option>
+            <option value="saint-petersburg">Санкт-Петербург</option>
+        </select>
+        <button class="search-button">Найти</button>
     </div>
-  </main>
+</header>
 
-  <script src="script.js"></script>
+<main>
+    <div class="background-image"></div>
+    <div class="buttons">
+        <button class="add-resume">Добавить резюме</button>
+        <button class="add-vacancy">Подать объявление</button>
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
